@@ -47,7 +47,7 @@ const Timer = () => {
     document.title = `(${minutes + ":" + seconds}) Session: ${
       modeRef.current === "work" ? "Work Time" : "Break Time"
     } - Promodoro Times`;
-  }, [minutes, seconds]);
+  });
 
   useEffect(() => {
     const switchMode = () => {
@@ -137,6 +137,20 @@ const Timer = () => {
               <Button
                 variant="contained"
                 startIcon={<PlayArrow />}
+                sx={{
+                  width: "120px",
+                  height: "40px",
+                  fontSize: "20px",
+                  backgroundColor: "#fff",
+                  fontWeight: 400,
+                  transform: "none",
+                  color: "#000",
+                  textTransform: "none",
+                  "&:hover": {
+                    color: "#fff",
+                    backgroundColor: "#202646",
+                  },
+                }}
                 onClick={() => {
                   setIsPaused(false);
                   isPausedRef.current = false;
@@ -152,6 +166,20 @@ const Timer = () => {
                   setIsPaused(true);
                   isPausedRef.current = true;
                 }}
+                sx={{
+                  width: "120px",
+                  height: "40px",
+                  fontSize: "20px",
+                  backgroundColor: "#fff",
+                  fontWeight: 400,
+                  transform: "none",
+                  color: "#000",
+                  textTransform: "none",
+                  "&:hover": {
+                    color: "#fff",
+                    backgroundColor: "#202646",
+                  },
+                }}
               >
                 Pause
               </Button>
@@ -161,6 +189,20 @@ const Timer = () => {
               startIcon={<Replay />}
               onClick={() => {
                 handleReset();
+              }}
+              sx={{
+                width: "120px",
+                height: "40px",
+                fontSize: "20px",
+                backgroundColor: "#fff",
+                fontWeight: 400,
+                transform: "none",
+                color: "#000",
+                textTransform: "none",
+                "&:hover": {
+                  color: "#fff",
+                  backgroundColor: "#202646",
+                },
               }}
             >
               Reset
